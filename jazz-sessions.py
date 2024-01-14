@@ -81,6 +81,7 @@ class App:
             else: 
                 self.result = 1
         pass
+
     def update_result(self):
         if self.result == 0 and (self.is_played_result_music == False):
             pyxel.playm(3, loop=False)
@@ -89,7 +90,7 @@ class App:
 
         self.is_played_result_music = True
 
-        if pyxel.btnp(pyxel.KEY_SPACE):
+        if pyxel.btnp(pyxel.KEY_R):
             self.reset_game()  # ゲームを再起動
         pass
 
@@ -125,6 +126,8 @@ class App:
         else:
             pyxel.text(100, 128, "Game Clear", pyxel.COLOR_GREEN)
             pyxel.text(98, 140, f"Score: {self.score}", pyxel.COLOR_WHITE)
+        
+        pyxel.text(68, 200, f"Re-Start: Push the [R] Key", pyxel.COLOR_WHITE)
         pass
 
     def reset_game(self):
